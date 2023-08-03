@@ -36,3 +36,7 @@ Documentation
 
 Code per chapter
 ----------------
+
+### Chapter 1
+- jupyternotebooks/quantumfeaturemap/kernelexample.ipynb
+  Example of generation of dataset and with =scikit-lean=
