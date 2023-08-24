@@ -1,0 +1,18 @@
+[build-system]
+requires=["hatchling"]
+build-backend="hatchling.build"
+[project]
+name="thqml_nonlinearxwaves"
+version="1.0.0"
+authors=[{name="Claudio Conti", email="nonlinearxwaves@gmail.com"}]
+description="Thinking Quantum Machine Learning, code of the book Quantum Machine Learning"
+readme="README.md"
+requires-python=">=3.7"
+classifiers=[
+"Programming Language :: Python ::3",
+"License :: OSI Approved :: BSD License",
+"Operating System :: OS Independent",
+]
+[projects.urls]
+"Homepage" = "https://github.com/nonlinearxwaves/thqml-1.0"
+"Author Homepage" = "https://www.newcomplexlight.org"
