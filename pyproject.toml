@@ -5,6 +5,7 @@ build-backend="hatchling.build"
 name="thqml_nonlinearxwaves"
 version="1.0.0"
 authors=[{name="Claudio Conti", email="nonlinearxwaves@gmail.com"}]
+license={file="LICENSE.txt"}
 description="Thinking Quantum Machine Learning, code of the book Quantum Machine Learning"
 readme="README.md"
 requires-python=">=3.7"
@@ -12,6 +13,11 @@ classifiers=[
 "Programming Language :: Python ::3",
 "License :: OSI Approved :: BSD License",
 "Operating System :: OS Independent",
+]
+dependencies=[
+"tensorflow>2",
+"numpy",
+"matplotlib",
 ]
 [projects.urls]
 "Homepage" = "https://github.com/nonlinearxwaves/thqml-1.0"
