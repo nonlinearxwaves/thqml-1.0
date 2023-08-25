@@ -173,7 +173,7 @@ Code per chapter
 -   `jupyternotebooks/quantumfeaturemap/SingleQubitTransverseFieldIsing.ipynb`
     page 89
     Transverse Field Ising Model with a Single Qubit
--   `mathematica/SingleQubitTransverseIsing.nb` $\mathematica$ **MATHEMATICA**
+-   `mathematica/SingleQubitTransverseIsing.nb` **MATHEMATICA**
     page 90
     Analytical results on the single qubit transverse field Ising model
 -   `jupyternotebooks/quantumfeaturemap/SingleQubitTransverseFieldIsing.ipynb`
@@ -188,10 +188,10 @@ Code per chapter
 
 ## Chapter 5
 
--   `mathematica/TwoQubitTransverseIsing.nb` $\mathematica$ **MATHEMATICA**
+-   `mathematica/TwoQubitTransverseIsing.nb` **MATHEMATICA**
     page 104
     Analytical results on the two-qubit transverse field Ising model
--   `mathematica/TwoQubitTransverseIsing.nb` $\mathematica$ **MATHEMATICA**
+-   `mathematica/TwoQubitTransverseIsing.nb` **MATHEMATICA**
     page 105 (continue)
     Analytical results on the two-qubit transverse field Ising model
 -   `jupyternotebooks/quantumfeaturemap/QubitsDensityMatrix.ipynb`
@@ -203,7 +203,7 @@ Code per chapter
 -   `jupyternotebooks/quantumfeaturemap/QubitsDensityMatrix.ipynb`
     page 132 (continue)
     Computing the density matrix with qubits
--   `mathematica/TwoQubitTransverseIsing.nb` $\mathematica$ **MATHEMATICA**
+-   `mathematica/TwoQubitTransverseIsing.nb` **MATHEMATICA**
     page 133 (continue)
     Analytical results on the two-qubit transverse field Ising model
 
@@ -227,12 +227,12 @@ Code per chapter
 
 ## Chapter 7
 
--   `matlabsymbolic/test_Rqpm.m` $\matlab$ MATLAB
+-   `matlabsymbolic/test_Rqpm.m`  **MATLAB**
     page 188
     Symbolic relations of projection matrices
 -   `jupyternotebooks/phasespace/symplectic.ipynb`
     page 189
-    Test of projection matrices in $\jupyter$
+    Test of projection matrices in **jupyter**
 -   `thqml/phasespace.py`
     page 190
     main library with phasespace functions
@@ -315,7 +315,7 @@ Code per chapter
 
 ## Chapter 10
 
--   `matlabsymbolic/squeezeoperator.m` $\matlab$ MATLAB
+-   `matlabsymbolic/squeezeoperator.m` **MATLAB**
     page 237
     Matrix representation of the squeeze operator in MATLAB
 -   `jupyternotebooks/phasespace/singlemodesquezer.ipynb`
@@ -394,10 +394,10 @@ Code per chapter
 -   `jupyternotebooks/phasespace/uncertainty.ipynb`
     page 272 (continue)
     Example in using Laplacian layer for computing uncertainty
--   `mathematica/noncommutative.nb` $\mathematica$ **MATHEMATICA**
+-   `mathematica/noncommutative.nb` **MATHEMATICA**
     page 275
     Mathematica example on non commutative operators
--   `mathematica/tensorgaussian.nb` $\mathematica$ **MATHEMATICA**
+-   `mathematica/tensorgaussian.nb`  **MATHEMATICA**
     page 276
     Mathematica example on tensors for Gaussian states
 -   `thqml/phasespace.py`
