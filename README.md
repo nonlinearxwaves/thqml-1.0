@@ -7,18 +7,16 @@ Code for the book Quantum Machine Learning, thinking and exploration (ThMQL)
 
 Being free of any licensing fees, ThQML is ideal for exploring quantum machine learning for students and researchers.
 
-Created by https://packaging.python.org/en/latest/tutorials/packaging-projects/
-
-Usage 
------
-conda activate thqml
-
+Created by following https://packaging.python.org/en/latest/tutorials/packaging-projects/
 
 Installation
 ------------
-In the folder with setup.py
+Local installation.
+The use may eventually use a =conda= or similar environment.
+
+In the downloaded folder from github
 ```bash
-pip install --editable .
+python3 -m pip install -e .
 ```
 Note the dot after editable
 
