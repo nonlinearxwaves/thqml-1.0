@@ -27,6 +27,8 @@ See the references in `thqml.bib`
 
 Tree
 ----
+
+```
 .
 ├── CODE_OF_CONDUCT.md
 ├── jupyternotebooks
@@ -105,7 +107,7 @@ Tree
 │   ├── quantumsolitons.py
 │   └── utilities.py
 └── thqml.bib
-
+```
 Documentation
 -------------
 
