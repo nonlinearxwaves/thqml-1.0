@@ -331,7 +331,7 @@ Code per chapter
 -   `jupyternotebooks/phasespace/singlemodesquezer.ipynb`
     page 243 (continue)
     Single-mode squeezer model
--   `matlabsymbolic/squeezeoperator.m` $\matlab$ MATLAB
+-   `matlabsymbolic/squeezeoperator.m` **MATLAB**
     page 244
     Matrix representation of the two-mode squeeze operator in MATLAB
 -   `thqml/phasespace.py`
@@ -340,7 +340,7 @@ Code per chapter
 -   `jupyternotebooks/phasespace/twomodesquezer.ipynb`
     page 247
     Two-mode squeezer model
--   `matlabsymbolic/beamsplitter.m` $\matlab$ MATLAB
+-   `matlabsymbolic/beamsplitter.m` **MATLAB**
     page 248
     Matrix representation of the beam splitter operator in MATLAB
 -   `thqml/phasespace.py`
