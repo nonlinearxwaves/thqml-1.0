@@ -2,7 +2,7 @@
 requires=["hatchling"]
 build-backend="hatchling.build"
 [project]
-name="thqml_nonlinearxwaves"
+name="thqml"
 version="1.0.0"
 authors=[{name="Claudio Conti", email="nonlinearxwaves@gmail.com"}]
 license={file="LICENSE.txt"}
@@ -16,6 +16,7 @@ classifiers=[
 ]
 dependencies=[
 "tensorflow>2",
+"scikit-learn",
 "numpy",
 "matplotlib",
 ]
