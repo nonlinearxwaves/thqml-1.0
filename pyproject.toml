@@ -26,6 +26,7 @@ dependencies=[
 "scikit-learn",
 "numpy",
 "matplotlib",
+"qutip",
 ]
 [projects.urls]
 "Homepage" = "https://github.com/nonlinearxwaves/thqml-1.0"
