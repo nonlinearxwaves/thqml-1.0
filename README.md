@@ -9,12 +9,25 @@ Being free of any licensing fees, ThQML is ideal for exploring quantum machine l
 
 Created by following https://packaging.python.org/en/latest/tutorials/packaging-projects/
 
+Requirements
+------------
+install graphviz https://graphviz.gitlab.io/download for plot_model to work
+REMARK pydot gives problems !!!
+MUST SPECIFY VERSIONS FOR WORKING 
 Installation
 ------------
 Local installation.
 The use may eventually use a =conda= or similar environment.
 
 In the downloaded folder from github
+```bash
+python3 -m pip install .
+```
+Note the dot at the end
+
+
+To install an editable version
+
 ```bash
 python3 -m pip install -e .
 ```

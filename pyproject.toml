@@ -16,6 +16,9 @@ classifiers=[
 ]
 dependencies=[
 "tensorflow>2",
+"tensorflow_addons",
+"keras",
+"keras-utils",
 "scikit-learn",
 "numpy",
 "matplotlib",
