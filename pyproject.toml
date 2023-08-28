@@ -8,16 +8,20 @@ authors=[{name="Claudio Conti", email="nonlinearxwaves@gmail.com"}]
 license={file="LICENSE.txt"}
 description="Thinking Quantum Machine Learning, code of the book Quantum Machine Learning"
 readme="README.md"
-requires-python=">=3.7"
+requires-python=">=3.10"
 classifiers=[
 "Programming Language :: Python",
 "License :: OSI Approved :: BSD License",
 "Operating System :: OS Independent",
 ]
 dependencies=[
-"tensorflow>2",
+"tensorflow==2.11.0",
+"typing-extensions",
+"jupyter",
 "tensorflow_addons",
 "keras",
+"pydot",
+"tdqm",
 "keras-utils",
 "scikit-learn",
 "numpy",

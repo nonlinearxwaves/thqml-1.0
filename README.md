@@ -11,9 +11,8 @@ Created by following https://packaging.python.org/en/latest/tutorials/packaging-
 
 Requirements
 ------------
-install graphviz https://graphviz.gitlab.io/download for plot_model to work
-REMARK pydot gives problems !!!
-MUST SPECIFY VERSIONS FOR WORKING 
+`graphviz` https://graphviz.gitlab.io/download for plot_model to work
+
 Installation
 ------------
 Local installation.
