@@ -14,7 +14,7 @@ from scipy.linalg import expm, sinm, cosm
 tf_real = tf.float32
 np_real = np.float32
 tf_complex = tf.complex
-np_complex = np.complex
+np_complex = complex
 default_N = 10
 
 
