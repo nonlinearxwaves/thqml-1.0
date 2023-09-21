@@ -16,7 +16,7 @@ Requirements
 Installation
 ------------
 Local installation.
-The use may eventually use a =conda= or similar environment.
+The use may eventually use a `conda` or similar environment.
 
 In the downloaded folder from github
 ```bash
