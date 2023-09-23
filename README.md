@@ -37,6 +37,12 @@ Citing ThQML
 If you use ThQML in your research, please cite the book
 See the references in `thqml.bib`
 
+Last test with code versions (september 2023)
+---------------------------------------------
+  - tensorflow 2.11.0
+  - matplotlib 3.7.2
+  - numpy 1.24.3
+
 Tree
 ----
 ```
