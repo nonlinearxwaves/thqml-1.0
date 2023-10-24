@@ -135,7 +135,7 @@ Code per chapter
 
 <a id="org3b82add"></a>
 
-## Chapter 1
+### Chapter 1
 
 -   `jupyternotebooks/quantumfeaturemap/kernelexample.ipynb`
       Page 13
@@ -144,7 +144,7 @@ Code per chapter
 
 <a id="org622ba77"></a>
 
-## Chapter 2
+### Chapter 2
 
 -   `jupyternotebooks/quantumfeaturemap/coherentstate.ipynb`
     Page 33
@@ -156,7 +156,7 @@ Code per chapter
 
 <a id="org916ab06"></a>
 
-## Chapter 3
+### Chapter 3
 
 -   `jupyternotebooks/quantumfeaturemap/QubitsMap.ipynb`
     page 52
@@ -186,7 +186,7 @@ Code per chapter
 
 <a id="orgdad239c"></a>
 
-## Chapter 4
+### Chapter 4
 
 -   `jupyternotebooks/quantumfeaturemap/SingleQubitTransverseFieldIsing.ipynb`
     page 89
@@ -204,7 +204,7 @@ Code per chapter
 
 <a id="org2fd7484"></a>
 
-## Chapter 5
+### Chapter 5
 
 -   `mathematica/TwoQubitTransverseIsing.nb` **MATHEMATICA**
     page 104
@@ -228,7 +228,7 @@ Code per chapter
 
 <a id="org0d23f64"></a>
 
-## Chapter 6
+### Chapter 6
 
 -   `jupyternotebooks/quantumfeaturemap/TwoQubitTransverseFieldIsing.ipynb`
     page 139
@@ -243,7 +243,7 @@ Code per chapter
 
 <a id="org411d827"></a>
 
-## Chapter 7
+### Chapter 7
 
 -   `matlabsymbolic/test_Rqpm.m`  **MATLAB**
     page 188
@@ -261,7 +261,7 @@ Code per chapter
 
 <a id="org3a2f4a9"></a>
 
-## Chapter 8
+### Chapter 8
 
 -   `thqml/phasespace.py`
     page 196 (continue)
@@ -289,7 +289,7 @@ Code per chapter
 
 <a id="org92c5f7c"></a>
 
-## Chapter 9
+### Chapter 9
 
 -   `jupyternotebooks/phasespace/coherent.ipynb`
     page 216 (continue)
@@ -331,7 +331,7 @@ Code per chapter
 
 <a id="orgc275731"></a>
 
-## Chapter 10
+### Chapter 10
 
 -   `matlabsymbolic/squeezeoperator.m` **MATLAB**
     page 237
@@ -345,7 +345,6 @@ Code per chapter
 -   `jupyternotebooks/phasespace/singlemodesquezer.ipynb`
     page 240 (continue)
     Single-mode squeezer model
-    **REMARK** fix the name of the file (remove capital S in squeezer)
 -   `jupyternotebooks/phasespace/singlemodesquezer.ipynb`
     page 243 (continue)
     Single-mode squeezer model
@@ -376,20 +375,17 @@ Code per chapter
 -   `jupyternotebooks/phasespace/BellBS.ipynb`
     page 254
     Example 2 with a photon counting layer
-    ****REMARK CORRECT FILE NAME AT PAGE 254 extension and bellBS****
 -   `jupyternotebooks/phasespace/photoncounting.ipynb`
     page 254
     Example 3 with a photon counting layer
-    ****REMARK CORRECT FILE NAME AT PAGE 254****
 -   `jupyternotebooks/phasespace/BellBS.ipynb`
     page 255 (continue)
     Example 4 with a photon counting layer and beam splitter
-    ****REMARK CORRECT FILE NAME AT PAGE 255****
 
 
 <a id="org1b09d13"></a>
 
-## Chapter 11
+### Chapter 11
 
 -   `thqml/phasespace.py`
     page 263 (continue)
@@ -437,7 +433,7 @@ Code per chapter
 
 <a id="org1602151"></a>
 
-## Chapter 12
+### Chapter 12
 
 -   `jupyternotebooks/bosonsamplingexample/BosonSamplingExample1.ipynb`
     page 305
@@ -463,7 +459,6 @@ Code per chapter
 -   `jupyternotebooks/bosonsamplingexample/BosonSamplingExample5.ipynb`
     page 318
     Example 5 with boson sampling, GBS Haar interferometer and multimode squeezed vacuum
-    **TODO correct file name in the note .ipynb**
 -   `thqml/phasespace.py`
     page 319 (continue)
     Main library with phasespace functions
@@ -480,7 +475,6 @@ Code per chapter
 -   `jupyternotebooks/bosonsamplingexample/BosonSamplingExample6.ipynb`
     page 324 (continue)
     Example 6 with boson sampling, GBS Haar interferometer and multimode squeezed vacuum
-    **TODO eliminare uno dei 2 riferimenti a page 321**
 -   `jupyternotebooks/bosonsamplingexample/BosonSamplingExample7.ipynb`
     page 329
     Example 7 with boson sampling, GBS Haar and squeezer with training particle number
@@ -504,7 +498,7 @@ Code per chapter
 
 <a id="org963eb6e"></a>
 
-## Chapter 13
+### Chapter 13
 
 -   `thqml/quantumsolitons.py`
     page 348
