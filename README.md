@@ -3,7 +3,7 @@ ThQML: Thinking Quantum Machine learning
 
 [C. Conti](https://github.com/nonlinearxwaves)
 
-Code for the book Quantum Machine Learning, thinking and exploration (ThMQL)
+Code for the book Quantum Machine Learning, https://doi.org/10.1007/978-3-031-44226-1
 
 Being free of any licensing fees, ThQML is ideal for exploring quantum machine learning for students and researchers.
 
