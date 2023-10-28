@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-t
 """
 Created on Sun Jun 14 16:25:42 2020
+Version 28 October 2023
 
-@author: nonli
+@author: claudio
 """
 
 import tensorflow as tf
@@ -121,7 +122,7 @@ class GaussianLayer(layers.Layer):
         g_in=np.eye(default_N, dtype=np_real),
         d_in=np.zeros((default_N, 1), dtype=np_real),
         trainable=True,
-        **kwargs
+        **kwargs,
     ):
         super(GaussianLayer, self).__init__(**kwargs)
         self.trainable = trainable
@@ -590,7 +591,7 @@ class CovarianceLayer(layers.Layer):
     ----------
     c1: real part of chi
     c2: imag part of chi
-    param: pullback: model to be derivated wrt x
+    param: pullback: model to be derived wrt x
 
     Returns
     -------
@@ -662,7 +663,7 @@ class PhaseModulatorLayer(layers.Layer):
         d_np=None,
         trainable_d=True,
         phases_np=None,
-        **kwargs
+        **kwargs,
     ):
         super(PhaseModulatorLayer, self).__init__(**kwargs)
         assert N % 2 == 0, " Dimension must be even "
@@ -769,7 +770,7 @@ class SingleModeSqueezerLayer(layers.Layer):
         d_np=None,
         trainable_d=False,
         autocast=False,
-        **kwargs
+        **kwargs,
     ):
         super(SingleModeSqueezerLayer, self).__init__(**kwargs)
         assert N % 2 == 0, " Dimension N must be even "
@@ -871,7 +872,7 @@ class TwoModeSqueezerLayer(layers.Layer):
         trainable=True,
         d_np=None,
         trainable_d=False,
-        **kwargs
+        **kwargs,
     ):
         super(TwoModeSqueezerLayer, self).__init__(**kwargs)
         assert N % 2 == 0, " Dimension N must be even "
@@ -1009,7 +1010,7 @@ class PhotonCountingLayer(layers.Layer):
     ----------
     c1: real part of chi
     c2: imag part of chi
-    pullback: model to be derivated wrt x
+    pullback: model to be derived wrt x
 
     Returns
     -------
@@ -1089,7 +1090,7 @@ class BeamSplitterLayer(layers.Layer):
         d_np=None,
         trainable_d=False,
         autocast=False,
-        **kwargs
+        **kwargs,
     ):
         super(BeamSplitterLayer, self).__init__(**kwargs)
         assert N % 2 == 0, " Dimension N must be even "
@@ -1273,7 +1274,7 @@ class LaplacianLayer(layers.Layer):
      ----------
      c1: real part of chi (dummy)
      c2: imag part of chi (dummy)
-     pullback: model to be derivated wrt x
+     pullback: model to be derived wrt x
 
      Returns
      -------
@@ -1341,7 +1342,7 @@ class BiharmonicLayer(layers.Layer):
     -----------
      c1: real part of chi
      c2: imag part of chi
-     pullback: model to be derivated wrt x
+     pullback: model to be derived wrt x
 
     Returns
     --------
@@ -1427,7 +1428,7 @@ class HeisenbergLayer(layers.Layer):
     ----------
     c1: real part of chi (dummy)
     c2: imag part of chi (dummy)
-    pullback: model to be derivated wrt x
+    pullback: model to be derived wrt x
 
     Returns
     -------
@@ -1483,7 +1484,7 @@ class BiharmonicGaussianLayer(layers.Layer):
     ----------
     c1: real part of chi
     c2: imag part of chi
-    pullback: model to be derivated wrt x
+    pullback: model to be derived wrt x
 
     Returns
     -------
@@ -1566,7 +1567,7 @@ class HeisenbergGaussianLayer(layers.Layer):
     ----------
     c1: real part of chi (dummy)
     c2: imag part of chi (dummy)
-    pullback: model to be derivated wrt x
+    pullback: model to be derived wrt x
 
     Returns
     -------
@@ -1618,7 +1619,7 @@ class DifferentialGaussianLayer(layers.Layer):
      ----------
      c1: real part of chi
      c2: imag part of chi
-     pullback: model to be derivated wrt x
+     pullback: model to be derived wrt x
 
      Returns
      -------
@@ -1780,7 +1781,7 @@ class DifferentialGaussianLayerBKP(layers.Layer):
      ----------
      c1: real part of chi
      c2: imag part of chi
-     pullback: model to be derivated wrt x
+     pullback: model to be derived wrt x
 
      Returns
      -------
@@ -2030,7 +2031,6 @@ class QTransformLayer(tf.keras.layers.Layer):
         self.scale = tf.math.pow(tf.linalg.det(self.Q), tf.constant(-0.5))
 
     def call(self, kin):
-
         k = kin - self.d
         yR = tf.matmul(self.QI, k, transpose_b=True)
         gDot = tf.matmul(-0.5 * k, yR)
@@ -2209,7 +2209,7 @@ class ResidualGaussian(layers.Layer):
         g=np.eye(10, dtype=np_real),
         d=np.zeros((10, 1), dtype=np_real),
         trainable=True,
-        **kwargs
+        **kwargs,
     ):
         super(ResidualGaussian, self).__init__(**kwargs)
         self.trainable = trainable
@@ -2404,7 +2404,7 @@ class avgR(layers.Layer):
     In the call
     param: c1: real part of chi
     param: c2: imag part of chi
-    param: pullback: model to be derivated wrt x
+    param: pullback: model to be derived wrt x
     """
 
     def __init__(self, N, **kwargs):
@@ -2459,7 +2459,7 @@ class CovarianceLayer2(layers.Layer):
     In the call
     param: c1: real part of chi
     param: c2: imag part of chi
-    param: pullback: model to be derivated wrt x
+    param: pullback: model to be derived wrt x
 
     Returns
     -------
@@ -2563,7 +2563,7 @@ class PhotonCounterLayerOld(layers.Layer):
     In the call
     param: c1: real part of chi
     param: c2: imag part of chi
-    param: pullback: model to be derivated wrt x
+    param: pullback: model to be derived wrt x
 
     Returns
     param: n: vector of expected values of the photon number
@@ -2838,7 +2838,7 @@ class SingleModePhaseModulator(layers.Layer):
         trainable_M=True,
         d_np=None,
         trainable_d=False,
-        **kwargs
+        **kwargs,
     ):
         super(SingleModePhaseModulator, self).__init__(**kwargs)
         assert N % 2 == 0, " Dimension N must be even "
@@ -3001,7 +3001,6 @@ class QTransformLayerOld(tf.keras.layers.Layer):
         self.d = mean_R1
 
     def call(self, kin):
-
         g = self.g
         d = self.d
         Q = tf.multiply(0.5, g + self.EN)
