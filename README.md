@@ -15,8 +15,16 @@ Requirements
 
 Installation
 ------------
-Local installation.
-The use may eventually use a `conda` or similar environment.
+
+Installation by pip and Python Package Index (https://pypi.org/project/thqml/1.0.0/)
+
+```bash
+pip install thqml
+```
+
+The user may eventually use a `conda` or similar environment.
+
+### Local installation
 
 In the downloaded folder from github
 ```bash
