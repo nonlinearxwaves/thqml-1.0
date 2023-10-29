@@ -281,7 +281,6 @@ Code per chapter
 -   `jupyternotebooks/phasespace/coherent.ipynb`
     page 209
     Neural network representation of a coherent state
-    **REMARK** <span class="underline">TODO</span> The reference in the book to the folder misses &rsquo;jupyternotebook&rsquo;
 -   `thqml/phasespace.py`
     page 210 (continue)
     main library with phasespace functions
