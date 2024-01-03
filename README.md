@@ -42,7 +42,8 @@ Note the dot after editable
 
 Citing ThQML 
 ------------
-If you use ThQML in your research, please cite the book
+If you use ThQML in your research, please cite the book.
+
 See the references in `thqml.bib`
 
 Last test with code versions (december 2023)
