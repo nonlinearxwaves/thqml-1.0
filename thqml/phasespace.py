@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-t
 """
 Created on Sun Jun 14 16:25:42 2020
-Version 28 October 2023
+Version 26 jan 2024
 
 @author: claudio
 """
@@ -3211,7 +3211,7 @@ class UnitaryLayer(layers.Layer):
         N=default_N,
         **kwargs,
     ):
-        super().__init__(**kwargs)
+        super(UnitaryLayer, self).__init__(**kwargs)
         assert N % 2 == 0, " Dimension N must be even "
         assert N > 3, " Dimension N must be greater than 3 "
         self.N = N
