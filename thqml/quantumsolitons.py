@@ -297,6 +297,7 @@ def evaluate_omega_nnt(**kwargs):
     tfomegai = tf.constant(np.imag(omega), **kwargs)
     return tfomegar, tfomegai
 
+
 @tf.function
 def kinetic_energy(tensor, **kwargs):
     """Compute the kinetic energy by covariance, d and Omega matrix
@@ -618,6 +619,7 @@ def logarithmic_negativity(cov_np, mask=np.zeros(n)):
 
     return ENeg, negativity, e1red, e2, v2
 
+
 def logarithmic_negativity_fast(cov_np, mask=np.zeros(n)):
     """Return the entropy of entanglement as determined from the eigs of cov, fast verison
 
@@ -799,3 +801,39 @@ def twin_solitons_entanglement(
         print(" ################################### ")
 
     return ENeg, twin_model
+
+
+def boson_numbers(model, **kwargs):
+    """Function that returns n,n2, and Dn2 given g,d,hessian
+    (used in variational ansatz)
+
+    General version not limited to Gaussian variables
+
+    In the call
+
+    Parameters
+    ----------
+    model   :   model returning chir and chii
+    N       :   dimension
+
+    Returns
+    -------
+    param: nboson: number of bosons per mode (1,n)
+    param: nboson2: squared number of bosons per mode (1,n)
+
+    Remark
+    ------
+    N, Rq, Rp are global here
+
+
+    """
+
+    biharmonic, laplacian, _ = qx.Heisenberg(model[0], N)
+
+    # evaluate the number of bosons
+    nboson = -0.5 * laplacian - 0.5
+
+    # evaluate the n2
+    nboson2 = 0.25 * biharmonic + 0.5 * laplacian
+
+    return nboson, nboson2

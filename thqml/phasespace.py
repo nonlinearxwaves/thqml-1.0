@@ -349,8 +349,8 @@ class RandomLayer(layers.Layer):
         # exponentiate the Hermitian matrix time the imaginary unit
         U = tf.linalg.expm(tf.complex(-HI, HR))
         # return the real and immaginary part
-        UR = tf.math.real(U)
-        UI = tf.math.imag(U)
+        UR = tf.cast(tf.math.real(U), dtype=self.dtype)
+        UI = tf.cast(tf.math.imag(U), dtype=self.dtype)
         # Build the symplectic matrix M
         M = (
             tf.matmul(self.Rx, tf.matmul(UR, self.Rx, transpose_b=True))
@@ -370,8 +370,10 @@ class RandomLayer(layers.Layer):
         # exponentiate the Hermitian matrix time the imaginary unit
         U = tf.linalg.expm(tf.complex(-HI, HR))
         # return the real and immaginary part
-        UR = tf.math.real(U)
-        UI = tf.math.imag(U)
+        UR = tf.cast(
+            tf.math.real(U), dtype=self.dtype
+        )  # dtype=self.dtype avoid the warning of casting from complex64 to real
+        UI = tf.cast(tf.math.imag(U), dtype=self.dtype)
         # Build the symplectic matrix M
         M = (
             tf.matmul(self.Rx, tf.matmul(UR, self.Rx, transpose_b=True))
@@ -472,8 +474,10 @@ class RandomIdentityLayer(layers.Layer):
         # exponentiate the Hermitian matrix time the imaginary unit
         U = tf.linalg.expm(tf.complex(-HI, HR))
         # return the real and immaginary part
-        UR = tf.math.real(U)
-        UI = tf.math.imag(U)
+        # UR = tf.math.real(U)
+        # UI = tf.math.imag(U)
+        UR = tf.cast(tf.math.real(U), dtype=self.dtype)
+        UI = tf.cast(tf.math.imag(U), dtype=self.dtype)
         # Build the symplectic matrix M
         M = (
             tf.matmul(self.Rx, tf.matmul(UR, self.Rx, transpose_b=True))
@@ -493,8 +497,10 @@ class RandomIdentityLayer(layers.Layer):
         # exponentiate the Hermitian matrix time the imaginary unit
         U = tf.linalg.expm(tf.complex(-HI, HR))
         # return the real and immaginary part
-        UR = tf.math.real(U)
-        UI = tf.math.imag(U)
+        # UR = tf.math.real(U)
+        # UI = tf.math.imag(U)
+        UR = tf.cast(tf.math.real(U), dtype=self.dtype)
+        UI = tf.cast(tf.math.imag(U), dtype=self.dtype)
         # Build the symplectic matrix M
         M = (
             tf.matmul(self.Rx, tf.matmul(UR, self.Rx, transpose_b=True))
@@ -644,10 +650,13 @@ class PhaseModulatorLayer(layers.Layer):
     Parameters
     ----------
     N: dimension
-    trainable_M: if false M is not trained, default is true
-    M_np: covariance matrix of the Gaussian layer
-    d_np: displacement vector of the Gaussian layer (None is default for a zero non trainable d)
-    trainable_d: if False the Gaussian covariance matrix and displacement are not trainable (default is true)
+    trainable_M: if false M is not trained, default is True
+    d_np=None: additional displacement parameter shape=(N,1), default is all zero and non trainable
+    trainable_d=False: if False the Gaussian covariance matrix and displacement are not trainable (default is True)
+    phases_np = None : if None initial phases are random and trainable if trainable_M = True (default)
+
+    If d_np = None the initial displacements are zero and not trainable (default behaviour, trainable_d is set to False)
+    Set trainable_d = True and give a non-zero d_np to have trainable displacement
 
     Returns
     -------
@@ -661,7 +670,7 @@ class PhaseModulatorLayer(layers.Layer):
         N=default_N,
         trainable_M=True,
         d_np=None,
-        trainable_d=True,
+        trainable_d=False,
         phases_np=None,
         **kwargs,
     ):
@@ -670,7 +679,7 @@ class PhaseModulatorLayer(layers.Layer):
         self.trainable_d = trainable_d
         self.trainable_M = trainable_M
         self.N = N
-        n = np.floor_divide(self.N, 2)
+        n = N // 2
         # random generation of phases
         if phases_np is None:
             theta_np = np.random.random((n,))
@@ -2303,8 +2312,10 @@ class TwoBlockInterferometer(layers.Layer):
         UU2 = tf.concat([Ehn, U], 0)
         UU = tf.concat([UU1, UU2], 1)
         # return the real and immaginary part
-        UR = tf.math.real(UU)
-        UI = tf.math.imag(UU)
+        # UR = tf.math.real(UU)
+        # UI = tf.math.imag(UU)
+        UR = tf.cast(tf.math.real(UU), dtype=self.dtype)
+        UI = tf.cast(tf.math.imag(UU), dtype=self.dtype)
         # Build the symplectic matrix M
         M = (
             tf.matmul(self.Rx, tf.matmul(UR, self.Rx, transpose_b=True))
@@ -2329,8 +2340,10 @@ class TwoBlockInterferometer(layers.Layer):
         UU2 = tf.concat([Ehn, U], 0)
         UU = tf.concat([UU1, UU2], 1)
         # return the real and immaginary part
-        UR = tf.math.real(UU)
-        UI = tf.math.imag(UU)
+        # UR = tf.math.real(UU)
+        # UI = tf.math.imag(UU)
+        UR = tf.cast(tf.math.real(UU), dtype=self.dtype)
+        UI = tf.cast(tf.math.imag(UU), dtype=self.dtype)
         # Build the symplectic matrix M
         M = (
             tf.matmul(self.Rx, tf.matmul(UR, self.Rx, transpose_b=True))
@@ -2742,8 +2755,10 @@ class RiggedRandom(layers.Layer):
         # exponentiate the Hermitian matrix time the imaginary unit
         U = tf.linalg.expm(tf.complex(-HI, HR))
         # return the real and immaginary part
-        UR = tf.math.real(U)
-        UI = tf.math.imag(U)
+        # UR = tf.math.real(U)
+        # UI = tf.math.imag(U)
+        UR = tf.cast(tf.math.real(U), dtype=self.dtype)
+        UI = tf.cast(tf.math.imag(U), dtype=self.dtype)
         # Build the symplectiv matrix M
         Mr = (
             tf.matmul(self.Rx, tf.matmul(UR, self.Rx, transpose_b=True))
@@ -2784,8 +2799,10 @@ class RiggedRandom(layers.Layer):
         # exponentiate the Hermitian matrix time the imaginary unit
         U = tf.linalg.expm(tf.complex(-HI, HR))
         # return the real and immaginary part
-        UR = tf.math.real(U)
-        UI = tf.math.imag(U)
+        # UR = tf.math.real(U)
+        # UI = tf.math.imag(U)
+        UR = tf.cast(tf.math.real(U), dtype=self.dtype)
+        UI = tf.cast(tf.math.imag(U), dtype=self.dtype)
         # Build the symplectiv matrix M
         Mr = (
             tf.matmul(self.Rx, tf.matmul(UR, self.Rx, transpose_b=True))
@@ -3016,3 +3033,211 @@ class QTransformLayerOld(tf.keras.layers.Layer):
         f = tf.multiply(f, scale)
 
         return f
+
+
+# @tf.function(jit_compile=True)
+# @tf.function (REMARK: this method does not work with authograph!!! different name sapce, cannot be used for training)
+def Biharmonic(model, xi, dtype=tf.float32):
+    # compute the biharmonic in a general model with direct derivatives
+    #
+    # TODO: check on GPU, check if compatible with @tf.function
+    # TODO: there is a problem with powers of functions when computing derivatives?
+    # model with x**4 gives nan
+    # model with cos work
+    #
+    # Input
+    # -----
+    # model is a QML model that returns chir and chii
+    # xi is a tensor with shape (N,1) - values at which the derivatives are computed
+    #
+    # @tf.function (REMARK: this method does not work with authograph!!! different name sapce, cannot be used for training)
+    # Output
+    # ------
+    # Bih : a tensor with shape (1,N/2) with the biharmonic components
+    # Lap : a tensor with shape (1,N/2) with the laplacian components
+    #
+    # Version 24 dec 2024
+    xl = tf.TensorArray(dtype, size=0, dynamic_size=True, clear_after_read=False)
+    fx = tf.TensorArray(dtype, size=0, dynamic_size=True, clear_after_read=False)
+    fxx = tf.TensorArray(dtype, size=0, dynamic_size=True, clear_after_read=False)
+    fxxx = tf.TensorArray(dtype, size=0, dynamic_size=True, clear_after_read=False)
+    fxxy = tf.TensorArray(dtype, size=0, dynamic_size=True, clear_after_read=False)
+    fxxxx = tf.TensorArray(dtype, size=0, dynamic_size=True, clear_after_read=False)
+    fxxyy = tf.TensorArray(dtype, size=0, dynamic_size=True, clear_after_read=False)
+
+    laplArray = tf.TensorArray(dtype, size=0, dynamic_size=True, clear_after_read=False)
+    bihArray = tf.TensorArray(dtype, size=0, dynamic_size=True, clear_after_read=False)
+
+    # xl = xl.unstack(tf.constant(xi, dtype=dtype))  # create an array from input
+    xl = xl.unstack(xi)  # create an array from input
+    # N = xl.size().numpy()  # extract dimension from input
+    N = xl.size()  # extract dimension from input
+    n2 = N // 2
+
+    #
+    # to run on a GPU
+    # this code should be tested on a GPU to see if it uses the GPU
+    with tf.GradientTape(persistent=True, watch_accessed_variables=True) as txxxx:
+        for i in range(N):
+            txxxx.watch(xl.read(i))
+        with tf.GradientTape(persistent=True, watch_accessed_variables=True) as txxx:
+            for i in range(N):
+                txxx.watch(xl.read(i))
+            with tf.GradientTape(persistent=True, watch_accessed_variables=True) as txx:
+                for i in range(N):
+                    txx.watch(xl.read(i))
+                with tf.GradientTape(
+                    persistent=True, watch_accessed_variables=True
+                ) as tx:
+                    for i in range(N):
+                        tx.watch(xl.read(i))
+                    # reating the real part of the model
+                    f, _ = model(
+                        tf.expand_dims(xl.stack(), 0)
+                    )  # convert the tensor array in a (1,N) array when calling model
+                for i in range(N):  # build array of tensors with first derivatives
+                    fx = fx.write(
+                        i,
+                        tx.gradient(
+                            f,
+                            xl.read(i),
+                            unconnected_gradients=tf.UnconnectedGradients.ZERO,
+                        ),
+                    )
+            for i in range(N):
+                fxx = fxx.write(
+                    i,
+                    txx.gradient(
+                        fx.read(i),
+                        xl.read(i),
+                        unconnected_gradients=tf.UnconnectedGradients.ZERO,
+                    ),
+                )
+        for i in range(N):
+            fxxx = fxxx.write(
+                i,
+                txxx.gradient(
+                    fxx.read(i),
+                    xl.read(i),
+                    unconnected_gradients=tf.UnconnectedGradients.ZERO,
+                ),
+            )
+        for i in range(n2):  # third derivatives mixed
+            q = 2 * i
+            p = 2 * i + 1
+            fxxy = fxxy.write(
+                q,
+                txxx.gradient(
+                    fxx.read(q),
+                    xl.read(p),
+                    unconnected_gradients=tf.UnconnectedGradients.ZERO,
+                ),
+            )
+            fxxy = fxxy.write(
+                p,
+                txxx.gradient(
+                    fxx.read(p),
+                    xl.read(q),
+                    unconnected_gradients=tf.UnconnectedGradients.ZERO,
+                ),
+            )
+    for i in range(N):  # fourth derivatives
+        fxxxx = fxxxx.write(
+            i,
+            txxxx.gradient(
+                fxxx.read(i),
+                xl.read(i),
+                unconnected_gradients=tf.UnconnectedGradients.ZERO,
+            ),
+        )
+    for i in range(n2):  # mixed fourth derivatives
+        q = 2 * i
+        p = 2 * i + 1
+        fxxyy = fxxyy.write(
+            q,
+            txxxx.gradient(
+                fxxy.read(q),
+                xl.read(p),
+                unconnected_gradients=tf.UnconnectedGradients.ZERO,
+            ),
+        )
+        # the following is strictly not needed as equal to the previous
+        fxxyy = fxxyy.write(
+            p,
+            txxxx.gradient(
+                fxxy.read(p),
+                xl.read(q),
+                unconnected_gradients=tf.UnconnectedGradients.ZERO,
+            ),
+        )
+
+    # sum odd and even terms
+    for i in range(n2):
+        q = 2 * i
+        p = 2 * i + 1
+        bihArray = bihArray.write(
+            i, fxxxx.read(q) + fxxyy.read(q) + fxxxx.read(p) + fxxyy.read(p)
+        )
+        laplArray = laplArray.write(i, fxx.read(q) + fxx.read(p))
+    # fxxyy has as elemente the mixed derivative dppqq and dqqpp
+    # in the reduced sum belo it counts two times the mixed terms
+    return bihArray.stack(), laplArray.stack()
+
+
+class UnitaryLayer(layers.Layer):
+    """General Unitary by beam splitters and phase modulator
+
+    Implement a general unitary operator as in
+    Reck Zeilinger Benstein Bertani, PRL 73, 58 (1994)
+
+    For n modes, use (n^2-n)/2 beam splitters and a phase modulator for n modes
+
+    Variables are randomly initialized
+
+    Parameters
+    ----------
+    N: dimension (doubled number of modes)
+    trainable = True
+
+    Returns
+    -------
+    y = x M
+    b = M^(-1) d
+
+    """
+
+    def __init__(
+        self,
+        N=default_N,
+        **kwargs,
+    ):
+        super().__init__(**kwargs)
+        assert N % 2 == 0, " Dimension N must be even "
+        assert N > 3, " Dimension N must be greater than 3 "
+        self.N = N
+        self.n = N // 2
+        # beam splitter layers
+
+        # a general unitary with beam splitters and a phase modulator
+        BeamSplitters = list()
+        for jbs in range(self.n):
+            for ibs in range(jbs):
+                rvars = 2.0 * np.pi * np.random.random(3)
+                BeamSplitters.append(
+                    BeamSplitterLayer(
+                        N,
+                        ibs,
+                        jbs,
+                        theta=rvars[0],
+                        phi0=rvars[1],
+                        phi1=rvars[2],
+                        **kwargs,
+                    )
+                )
+        self.BeamSplitters = BeamSplitters
+        self.PhaseModulator = PhaseModulatorLayer(N, **kwargs)
+
+    def call(self, x1, d1):
+        for ibs in self.BeamSplitters:
+            (x1, d1) = ibs(x1, d1)
+        return self.PhaseModulator(x1, d1)
